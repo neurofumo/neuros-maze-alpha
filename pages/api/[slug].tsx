@@ -20,10 +20,15 @@ const todaySeed = () => {
 };
 
 const parseMoves = (path: string): string[] => {
-  const match = path.match(/\/([a-z]*)i\.webp/);
-  if (!match || !match[1]) return [];
-  return match[1].split('').reverse();
+  const match = path.match(/\/(.*)i\.webp/);
+  if (!match || !match[1] || !match[1].startsWith('p')) return [];
+  const movesRaw = match[1].slice(1); // remove the 'p'
+  return movesRaw
+    .split('')
+    .filter((c) => 'wasd'.includes(c));
 };
+
+
 
 const generateMaze = (seed: string): number[][] => {
   const rand = mulberry32(seed.split('').reduce((a, c) => a + c.charCodeAt(0), 0));
