@@ -115,7 +115,7 @@ export default async function handler(req: NextRequest) {
           height: '720px',
           display: 'flex',
           position: 'relative',
-          backgroundImage: `url(http://localhost:3000/bg-game.png)`,
+          backgroundImage: `url(https://nur-amber.vercel.app/bg-game.png)`,
           backgroundSize: 'cover',
         }}
       >
@@ -131,7 +131,7 @@ export default async function handler(req: NextRequest) {
                     width: CELL_WIDTH,
                     display: 'flex',
                     height: CELL_HEIGHT,
-                    backgroundColor: 'rgba(0, 0, 0, 1)',
+                    backgroundColor: 'rgba(255, 255, 255, 1)',
                     left: MAZE_TOP_LEFT.x + i * CELL_WIDTH,
                     top: MAZE_TOP_LEFT.y + j * CELL_HEIGHT,
                   }}
@@ -230,7 +230,7 @@ function imageWithWinText(mazeText: string, inputText: string) {
         style={{
           width: '1280px',
           height: '720px',
-          backgroundImage: `url(http://localhost:3000/bg-win.png)`,
+          backgroundImage: `url(https://nur-amber.vercel.app/bg-win.png)`,
           backgroundSize: 'cover',
           position: 'relative',
           display: 'flex',
@@ -291,7 +291,7 @@ function imageWithBackground(image: string) {
         style={{
           width: '1280px',
           height: '720px',
-          backgroundImage: `url(http://localhost:3000/${image})`,
+          backgroundImage: `url(https://nur-amber.vercel.app/${image})`,
           backgroundSize: 'cover',
           display: 'flex',
         }}
