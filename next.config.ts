@@ -1,8 +1,20 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  async rewrites() {
+    return [
+      {
+        source: '/:slug.webp',
+        destination: '/api/:slug.webp',
+      },
+    ];
+  },
+  experimental: {
+    serverComponentsExternalPackages: ['@vercel/og']
+  },
   reactStrictMode: true,
-};
+}
 
-export default nextConfig;
+export default nextConfig
+
+
